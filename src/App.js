@@ -27,7 +27,7 @@ import bg10 from './sprites/background/10.png';
 
 // The contact deployment address in Etherium blockchain
 // win-10-workstation-ganache-contract-address
-const CONTRACT_ADDRESS = '0x373aD6Ce154C45aE99F2Fdcb61Ed02d514C9eF44'
+const CONTRACT_ADDRESS = '0xc85B8eF362b843D306Eea1dD4568E61031b41d0d'
 // project.sol contract address ganache
 // const CONTRACT_ADDRESS = "0x8B2d7e694398f820E038383B68341f737040bA42";
 
@@ -57,7 +57,7 @@ const names = ['Bulbasaur', 'Ivysaur', 'Venusaur', 'Charmander', 'Charmeleon', '
 async function getAccounts() {
   let web3 = new Web3(window.ethereum);
 
-  web3.setProvider('http://localhost:7545');
+  web3.setProvider('https://data-seed-prebsc-1-s1.binance.org:8545');
 
   return await web3.eth.getAccounts() // Returns a promise with the account that logged in
 }
@@ -74,7 +74,7 @@ async function getMons(web3, account) {
 
 async function onClickConnect(that) {
   that._web3 = new Web3(window.ethereum);
-  that._web3.setProvider('http://localhost:7545');
+  that._web3.setProvider('https://data-seed-prebsc-1-s1.binance.org:8545');
 
   // change btn text to show 'Connect Wallet'
   // refresh
@@ -157,7 +157,7 @@ class Cryptomons extends Component {
     if (window.ethereum) {
       // use MetaMask's provider
       this._web3 = new Web3(window.ethereum);
-      this._web3.setProvider('http://localhost:7545');
+      this._web3.setProvider('https://data-seed-prebsc-1-s1.binance.org:8545');
 
       window.ethereum.enable(); // get permission to access accounts
 
